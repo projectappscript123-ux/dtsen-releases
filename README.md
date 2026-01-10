@@ -2,7 +2,7 @@
 
 Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Google Sheets.
 
-**Versi**: 5.1.6 🎉  
+**Versi**: 5.1.9 🎉  
 **Platform**: React Native (Expo)  
 **Android**: ✅ Full Support  
 **Status**: Production Ready
@@ -29,8 +29,9 @@ Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Goog
 - ✅ **Date Picker Calendar** - Kalender native untuk input tanggal lahir (v5.1.4)
 - ✅ **WilayahIndonesiaPicker** - Picker cascading Provinsi/Kabupaten/Kecamatan/Desa Indonesia (v5.1.4)
 - ✅ **Centralized Settings** - Sistem pengaturan terpusat dengan SettingsService (v5.1.5)
-- 🆕 **Download Progress Popup** - Progress bar real-time saat download APK (v5.1.6)
-- 🆕 **In-App Download** - Download APK langsung tanpa buka browser (v5.1.6)
+- ✅ **Download Progress Popup** - Progress bar real-time saat download APK (v5.1.6)
+- ✅ **In-App Download** - Download APK langsung tanpa buka browser (v5.1.6)
+- 🆕 **Improved APK Install** - Multiple fallback methods untuk install APK (v5.1.8)
 
 ### 📝 **Form Features**
 - ✅ **Smart Validation** - Real-time field validation dengan error highlighting
@@ -51,20 +52,32 @@ Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Goog
 - ✅ **Auto-versioning** - Git-based version management
 - ✅ **Error Prevention** - Crash detection & recovery
 - ✅ **Silent Operation** - No popup notifications
-- 🆕 **GitHub Releases Support** - Hosting APK di GitHub untuk download yang lebih reliable (v5.1.6)
+- ✅ **GitHub Releases Support** - Hosting APK di GitHub untuk download yang lebih reliable (v5.1.6)
 - ✅ **Session Cleanup** - Auto-cleanup expired sessions
 - ✅ **Version Consistency** - Konsistensi versi di semua konfigurasi
-- 🆕 **Network Monitoring** - Real-time network status dengan ping measurement (v5.1.3)
+- ✅ **Network Monitoring** - Real-time network status dengan ping measurement (v5.1.3)
 - ✅ **Photo System Overhaul** - Separated services untuk stabilitas maksimal (v5.1.4)
 - ✅ **Direct Upload System** - Simplified photo upload tanpa cache kompleks (v5.1.4)
 - ✅ **Global Settings** - Settings GLOBAL untuk semua user, hanya admin yang bisa ubah (v5.1.5)
 - ✅ **Force Logout Detection** - Deteksi otomatis saat login di device lain (v5.1.5)
+- 🆕 **REQUEST_INSTALL_PACKAGES Permission** - Permission untuk install APK dari dalam aplikasi (v5.1.8)
 
 ### 🔐 **Admin Features**
 - ✅ **User Management** - Kelola user (admin only)
-- 🆕 **Session Management** - Manual & auto cleanup expired sessions
-- 🆕 **Auto Trigger** - Otomatis setup cleanup trigger saat spreadsheet dibuka
-- 🆕 **Admin Notes** - Catatan status data dengan 5 pilihan warna di card list (v5.1.0)
+- ✅ **Session Management** - Manual & auto cleanup expired sessions
+- ✅ **Auto Trigger** - Otomatis setup cleanup trigger saat spreadsheet dibuka
+- ✅ **Admin Notes** - Catatan status data dengan 5 pilihan warna di card list (v5.1.0)
+
+---
+
+## 🎉 WHAT'S NEW IN v5.1.8
+
+### 🔧 **Fix APK Install & Field Mapping**
+- **Multiple Install Methods**: Fungsi installAPK sekarang mencoba 3 metode berbeda untuk install APK
+- **REQUEST_INSTALL_PACKAGES Permission**: Menambahkan permission untuk install APK dari sumber tidak dikenal
+- **File Manager Fallback**: Jika semua metode install gagal, buka file manager agar user bisa install manual
+- **Field NO. Fix**: Memperbaiki mapping field "NO." di data penduduk (sebelumnya tidak terbaca dari spreadsheet)
+- **Label Cleanup**: Menghapus keterangan "(Data dari Spreadsheet)" yang tidak perlu di form edit penduduk
 
 ---
 
@@ -462,6 +475,7 @@ Scan QR code dengan Expo Go app atau gunakan Android emulator.
 
 | Version | Date | Description |
 |---------|------|-------------|
+| **5.1.9** | Jan 2026 | 🔧 Migrasi akun Expo baru: owner hikmal_zerozeerozeven |
 | **5.1.4** | Jan 2026 | 📸 Major Photo System Overhaul: separated services, direct upload, date picker calendar, photo preview & reset system |
 | **5.1.3** | Jan 2026 | 🌐 Smart Network Status Bar dengan real-time detection & ping measurement + Critical error fixes |
 | **5.1.2** | Jan 2026 | � LoadidngOverlay consistency fixes, model bingkai yang sama |
