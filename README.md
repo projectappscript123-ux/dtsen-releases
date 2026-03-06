@@ -2,7 +2,7 @@
 
 Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Google Sheets.
 
-**Versi**: 5.1.9 🎉  
+**Versi**: 5.2.6 🎉  
 **Platform**: React Native (Expo)  
 **Android**: ✅ Full Support  
 **Status**: Production Ready
@@ -70,6 +70,86 @@ Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Goog
 
 ---
 
+## 🎉 WHAT'S NEW IN v5.2.6
+
+### ⚡ **Performance Optimization**
+- **Optimasi Load Data Offline**: Query database lebih cepat dengan method `getUnsyncedKeluarga()` dan `getUnsyncedIndividu()`
+- **Tab Caching**: Cache data per tab selama 30 detik untuk menghindari reload berulang
+- **Instant Tab Switching**: Tidak ada lagi blank screen saat switch tab KELUARGA ↔ INDIVIDU
+
+### 👥 **Online Users Fix**
+- **Client-side Timeout Check**: User otomatis offline jika tidak aktif >30 detik
+- **Optimized Intervals**: Presence update 10s, fetch 15s (dari 5s dan 10s)
+- **Accurate Online Status**: Status online lebih akurat dan real-time
+
+### 🐛 **Bug Report Manager (Admin Only)**
+- **List Bug Reports**: Lihat semua bug report dengan search & filter
+- **Statistics Dashboard**: Total, open, in progress, resolved, closed
+- **Detail View**: Stack trace, device info, error message lengkap
+- **Update Status**: Ubah status bug (open, in progress, resolved, closed)
+- **Delete Bug**: Hapus bug report yang sudah selesai
+
+---
+
+## 🎉 WHAT'S NEW IN v5.2.5
+
+### 🎨 **UI/UX Improvements**
+- **Tab Bar Modern**: Efek animasi bounce saat klik menu tab bar seperti aplikasi modern
+- **Tab Bar Responsive**: Ukuran teks tab bar responsif agar tidak terpotong di semua ukuran HP
+- **Tab Bar Centralized**: Semua konfigurasi tab bar dipindahkan ke file terpusat (TabBarConfig.ts)
+- **Splash Screen**: Tampilan logo dan nama aplikasi dengan delay 3 detik sebelum form login
+- **Loading Kelola User**: Modal "Memuat data user..." saat membuka halaman Kelola User
+
+### 🐛 **Bug Fixes**
+- **Tab Bar Text Truncation**: Memperbaiki teks menu tab bar yang terpotong dengan mengatur width dan padding yang tepat
+
+---
+
+## 🎉 WHAT'S NEW IN v5.2.0
+
+### 🎨 **UI/UX Improvements**
+- **Konsistensi Header Bar**: Tinggi header bar hitam disamakan di semua menu utama (Dashboard, Data, Kuesioner, Penduduk, Profile)
+- **NotificationBell di Semua Menu**: Icon notifikasi bell sekarang muncul di semua menu untuk admin
+- **Komponen Lebih Compact**: NetworkStatusBar dan OnlineUsersIndicator dikecilkan untuk ruang yang lebih baik
+- **Total Bar Penduduk**: Menambahkan bar hijau yang menampilkan total data penduduk
+- **Update Checker Dirapikan**: Tombol dan modal cek update di menu Profile lebih compact dan rapi
+- **Footer Dashboard Dihapus**: Menghilangkan footer yang tidak perlu di dashboard
+- **Tab Bar Modern**: Efek animasi bounce saat klik menu tab bar seperti aplikasi modern
+- **Tab Bar Responsive**: Ukuran teks tab bar responsif agar tidak terpotong di semua ukuran HP
+- **Tab Bar Centralized**: Semua konfigurasi tab bar dipindahkan ke file terpusat (TabBarConfig.ts)
+- **Splash Screen**: Tampilan logo dan nama aplikasi dengan delay 3 detik sebelum form login
+- **Loading Kelola User**: Modal "Memuat data user..." saat membuka halaman Kelola User
+
+### 🐛 **Bug Fixes**
+- **Modal Dropdown Terhalang**: Memperbaiki modal dropdown yang terhalang tombol navigasi HP dengan menambahkan paddingBottom di semua bottom sheet modal
+- **Update Data Penduduk Tidak Tersimpan**: Memperbaiki field yang tidak tersimpan ke spreadsheet dengan normalisasi field names (mixed case dan UPPERCASE)
+- **Tab Bar Text Truncation**: Memperbaiki teks menu tab bar yang terpotong dengan mengatur width dan padding yang tepat
+
+### 📝 **Update Konten**
+- **Tentang Aplikasi**: Tambah section Menu Utama (Dashboard, Data, Kuesioner, Penduduk, Profile)
+- **Pusat Bantuan**: Update panduan dengan menu utama yang lengkap
+
+### 🐛 **Perbaikan Online Users**
+- **Timeout Check**: User yang tidak aktif >40 detik tidak ditampilkan meskipun IS_ONLINE = TRUE
+- **Force Close Handling**: User yang force close aplikasi akan otomatis hilang dari daftar online setelah 40 detik
+
+### 🧹 **Session Cleanup Enhancement**
+- **Auto Delete Logout Sessions**: Session dengan status `logout` atau `force_logout` otomatis dihapus dari spreadsheet
+- **Max 20 Sessions**: Membatasi maksimal 20 session di spreadsheet, session paling lama dihapus otomatis jika melebihi
+
+---
+
+## 🎉 WHAT'S NEW IN v5.1.9
+
+### 🔧 **Migrasi Akun Expo Baru & Perbaikan Install APK**
+- **Owner Update**: Migrasi ke akun Expo baru `hikmal_zerozeerozeven`
+- **Project ID**: Generate projectId baru untuk akun Expo yang baru
+- **5 Metode Install**: Menambahkan 2 metode fallback baru (file manager dan file picker)
+- **Browser Fallback**: Jika semua metode install gagal, otomatis buka browser untuk download
+- **BackHandler Fix**: Memperbaiki tombol "Keluar Aplikasi" yang tidak berfungsi
+
+---
+
 ## 🎉 WHAT'S NEW IN v5.1.8
 
 ### 🔧 **Fix APK Install & Field Mapping**
@@ -78,6 +158,17 @@ Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Goog
 - **File Manager Fallback**: Jika semua metode install gagal, buka file manager agar user bisa install manual
 - **Field NO. Fix**: Memperbaiki mapping field "NO." di data penduduk (sebelumnya tidak terbaca dari spreadsheet)
 - **Label Cleanup**: Menghapus keterangan "(Data dari Spreadsheet)" yang tidak perlu di form edit penduduk
+
+---
+
+## 🎉 WHAT'S NEW IN v5.1.7
+
+### 🔧 **Fix In-App Download & GitHub Releases Support**
+- **UpdateCheckerStartup In-App Download**: Menambahkan fitur in-app download di komponen UpdateCheckerStartup
+- **Download Progress Modal**: Popup progress download dengan progress bar real-time
+- **GitHub Releases Support**: Download APK sekarang support URL dari GitHub Releases
+- **Expo FileSystem Legacy**: Fix deprecated `downloadAsync` dengan import dari `expo-file-system/legacy`
+- **Fallback Browser**: Jika in-app download gagal, otomatis buka browser sebagai fallback
 
 ---
 
@@ -185,11 +276,10 @@ Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Goog
 ## 🎉 PREVIOUS MAJOR RELEASES
 
 ### **v5.1.3** - Smart Network Status & Critical Fixes
-### **v5.1.3** - Smart Network Status & Critical Fixes
 - **🌐 Smart Network Status**: Real-time network monitoring dengan ping measurement akurat
-- **� Cri1tical Error Fixes**: Fixed undefined property access, hideSaving method, text rendering
+- **🐛 Critical Error Fixes**: Fixed undefined property access, hideSaving method, text rendering
 - **⚡ Performance**: Optimized endpoints dan realistic ping values berdasarkan jenis koneksi
-- **� S*afety Components**: DataErrorBoundary dan SafeText untuk mencegah crash
+- **🛡️ Safety Components**: DataErrorBoundary dan SafeText untuk mencegah crash
 - **🚨 Critical Bug Fixes**: Resolved infinite loop errors and login stability issues
 - **🆕 Admin Notes**: Status tracking dengan 5 pilihan warna di card list
 - **📱 Auto Scroll**: Proper implementation dengan multiple attempts
@@ -475,15 +565,22 @@ Scan QR code dengan Expo Go app atau gunakan Android emulator.
 
 | Version | Date | Description |
 |---------|------|-------------|
+| **5.2.6** | Mar 2026 | ⚡ Performance: optimasi loading, tab caching, online users fix, bug report manager |
+| **5.2.5** | Mar 2026 | 🎨 UI/UX Improvements: konsistensi header, tab bar modern |
+| **5.2.0** | Jan 2026 | 🎨 UI/UX Improvements: konsistensi header, NotificationBell di semua menu |
 | **5.1.9** | Jan 2026 | 🔧 Migrasi akun Expo baru: owner hikmal_zerozeerozeven |
-| **5.1.4** | Jan 2026 | 📸 Major Photo System Overhaul: separated services, direct upload, date picker calendar, photo preview & reset system |
-| **5.1.3** | Jan 2026 | 🌐 Smart Network Status Bar dengan real-time detection & ping measurement + Critical error fixes |
-| **5.1.2** | Jan 2026 | � LoadidngOverlay consistency fixes, model bingkai yang sama |
-| **5.1.1** | Jan 2026 | 📸 Upload foto KK baru di form individu jika pindah KK |
-| **5.1.0** | Dec 2025 | 🆕 Admin Notes feature in card list, family-individual sync, real-time feedback |
-| **5.0.0** | Dec 2025 | � Criti cal bug fixes, auto scroll implementation, field organization, ESLint compliance |
-| **4.9.0** | Dec 2025 | 🔧 Build system fixes, automated version sync, code quality improvements |
-| **4.8.0** | Dec 2025 | 🔧 TypeScript fixes, enhanced type safety, version consistency |
+| **5.1.8** | Jan 2026 | � Fix APK Install & Field Mapping: multiple install methods |
+| **5.1.7** | Jan 2026 | 📥 Fix In-App Download & GitHub Releases Support |
+| **5.1.6** | Jan 2026 | 📥 Popup Download Progress & GitHub Releases Support |
+| **5.1.5** | Jan 2026 | ⚙️ Centralized Settings System & Session Management |
+| **5.1.4** | Jan 2026 | 📸 Major Photo System Overhaul: separated services, direct upload, date picker calendar |
+| **5.1.3** | Jan 2026 | 🌐 Smart Network Status Bar dengan real-time detection & ping measurement |
+| **5.1.2** | Jan 2026 | � Notifikasi koordinasi SIKS-NG & Cek Update Otomatis |
+| **5.1.1** | Jan 2026 | � Upload foto KK baru di form individu jika pindah KK |
+| **5.1.0** | Dec 2025 | � Admin Notes feature in card list, family-individual sync |
+| **5.0.0** | Dec 2025 | 🐛 Critical bug fixes, auto scroll implementation, field organization |
+| **4.9.0** | Dec 2025 | 🔧 Build system fixes, automated version sync |
+| **4.8.0** | Dec 2025 | 🔧 TypeScript fixes, enhanced type safety |
 | **4.0.0** | Dec 2025 | 🎉 Complete app refactoring, enhanced stability |
 
 ---
