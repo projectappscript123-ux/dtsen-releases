@@ -2,7 +2,7 @@
 
 Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Google Sheets.
 
-**Versi**: 5.2.6 🎉  
+**Versi**: 5.2.7 🎉  
 **Platform**: React Native (Expo)  
 **Android**: ✅ Full Support  
 **Status**: Production Ready
