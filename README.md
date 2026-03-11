@@ -2,7 +2,7 @@
 
 Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Google Sheets.
 
-**Versi**: 5.2.7 🎉  
+**Versi**: 5.2.8 🎉  
 **Platform**: React Native (Expo)  
 **Android**: ✅ Full Support  
 **Status**: Production Ready
@@ -67,6 +67,19 @@ Aplikasi mobile untuk kuesioner data keluarga dan individu dengan integrasi Goog
 - ✅ **Session Management** - Manual & auto cleanup expired sessions
 - ✅ **Auto Trigger** - Otomatis setup cleanup trigger saat spreadsheet dibuka
 - ✅ **Admin Notes** - Catatan status data dengan 5 pilihan warna di card list (v5.1.0)
+
+---
+
+## 🎉 WHAT'S NEW IN v5.2.8
+
+### 🗑️ **Dashboard Optimization**
+- **Menghapus Tabel Status Sinkronisasi**: Tabel yang memiliki masalah penjumlahan tidak akurat telah dihapus
+- **Dashboard Lebih Fokus**: Hanya menampilkan 3 tabel utama - Kuesioner per Dusun, Penduduk per Dusun, dan Status Penduduk
+- **UI Lebih Bersih**: Interface dashboard lebih sederhana dan mudah dipahami
+
+### 🚀 **Performance Improvements**
+- **Loading Lebih Cepat**: Menghapus query `getSyncStatistics()` yang tidak perlu
+- **Kode Lebih Maintainable**: Menghapus komponen dan state yang tidak terpakai
 
 ---
 
@@ -565,6 +578,7 @@ Scan QR code dengan Expo Go app atau gunakan Android emulator.
 
 | Version | Date | Description |
 |---------|------|-------------|
+| **5.2.8** | Mar 2026 | 🗑️ Dashboard Optimization: menghapus tabel Status Sinkronisasi, dashboard lebih fokus |
 | **5.2.6** | Mar 2026 | ⚡ Performance: optimasi loading, tab caching, online users fix, bug report manager |
 | **5.2.5** | Mar 2026 | 🎨 UI/UX Improvements: konsistensi header, tab bar modern |
 | **5.2.0** | Jan 2026 | 🎨 UI/UX Improvements: konsistensi header, NotificationBell di semua menu |
